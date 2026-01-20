@@ -98,7 +98,7 @@ def parse_arguments():
     parser.add_argument("--is_encode_text", type=int, default="1", help="encode text or not")
     parser.add_argument("--rerank_by_scores", type=int, default="1", help="rerank_by_scores or rerank_by_rank")
     parser.add_argument("--is_pca", type=int, default="0", help="do pca on descriptors or not")
-    parser.add_argument("--pca_dim", type=int, default="512", help="pca dimension")
+    parser.add_argument("--embeds_dim", type=int, default="512", help="embeds dimension")
     parser.add_argument("--is_text_pooling", type=int, default="0", help="pool text or not")
     parser.add_argument("--is_image_pooling", type=int, default="0", help="pool image or not")
     parser.add_argument("--cross_modal", type=int, default="0", help="cross modal 0=no/1=blip orig/2=our model")

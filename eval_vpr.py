@@ -253,8 +253,8 @@ def main(args):
             encode_batch(model, args, images, texts, indices, all_descriptors, vision_descriptors, text_descriptors, w_alpha)
         
         if args.is_pca:            
-            vision_descriptors = do_pca(vision_descriptors, args.pca_dim)
-            model.vpr_encoder_dim = args.pca_dim
+            vision_descriptors = do_pca(vision_descriptors, args.embeds_dim)
+            model.vpr_encoder_dim = args.embeds_dim
             logger.info(f"PCA reduced vision descriptors to dimension: {model.vpr_encoder_dim}")
             if args.encode_mode == 'image':
                 all_descriptors = vision_descriptors
