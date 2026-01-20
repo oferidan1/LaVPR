@@ -42,8 +42,7 @@ To reproduce our results, download the following datasets:
 | --- | --- | --- |
 | **GSV-Cities** | Training (Source) | [Download](https://github.com/amaralibey/gsv-cities) |
 | **MSLS** | Evaluation | [Download](https://github.com/FrederikWarburg/mapillary_sls) |
-| **Pittsburgh** | Evaluation | [Download](https://data.ciirc.cvut.cz/public/projects/2015netVLAD/Pittsburgh250k/) |
-| **LaVPR** | Text descriptions | Extract: datasets/descriptions.zip to datasets/descriptions |
+| **LaVPR** | Text descriptions | Extract: datasets/descriptions.zip |
 
 ---
 
