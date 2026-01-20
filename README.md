@@ -43,6 +43,8 @@ To reproduce our results, download the following datasets:
 | **GSV-Cities** | Training (Source) | [Download](https://github.com/amaralibey/gsv-cities) |
 | **MSLS** | Evaluation | [Download](https://github.com/FrederikWarburg/mapillary_sls) |
 | **LaVPR** | Text descriptions | Extract: datasets/descriptions.zip |
+| **LaVPR** | MSLS-Blur | Copy to msls/val folder: datasets/msls_subsets/query_blur |
+| **LaVPR** | MSLS-Weather | Copy to msls/val folder: datasets/msls_subsets/query_weather |
 
 ---
 
