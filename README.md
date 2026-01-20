@@ -107,12 +107,4 @@ This repository builds upon several excellent open-source projects:
 
 ---
 
-## 📝 Citation
-
-If you find our work useful in your research, please cite:
-
-```bibtex
-
-
-```
 
