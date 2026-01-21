@@ -108,6 +108,22 @@ data/
         └── queries/        <-- queries_folder
 ```
 
+```text
+datasets/
+└── descriptions/    
+    amstertime_descriptions.csv              <-- amstertime descriptions texts
+    amstertime_descriptions_subset.csv       <-- amstertime descriptions subset texts
+    gsv_cities_descriptions.csv              <-- gsv cities descriptions texts
+    msls_challenge_descriptions.csv          <-- msls challenge descriptions texts
+    msls_val_descriptions.csv                <-- msls val descriptions texts
+    msls_val_descriptions_blur.csv           <-- msls val descriptions blur texts
+    msls_val_descriptions_weather.csv        <-- msls val descriptions weather texts
+    pitts30k_test_descriptions.csv           <-- pitts30k test descriptions texts
+    pitts30k_val_800_queries.csv             <-- pitts30k val 800 queries texts
+    pitts30k_val_descriptions.csv            <-- pitts30k val descriptions texts
+   
+```
+
 | Mode | Command Snippet |
 | --- | --- |
 | **Image Only** | `python eval_vpr.py --encode_mode=image --is_encode_text=0 --database_folder=PATH_TO_DB_IMAGES --queries_folder=PATH_TO_QUERY_IMAGES --image_root=PATH_TO_IMAGE_ROOT --queries_csv=PATH_TO_DESCRIPTION_CSV` |
