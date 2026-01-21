@@ -97,19 +97,25 @@ python train.py --cross_modal=2 \
 
 We provide several evaluation modes to test the versatility of LaVPR.
 
+### 📂 Directory Structure
+To ensure the paths are mapped correctly, organize your local dataset as follows:
+
+```text
+data/
+└── amstertime/
+    └── test/               <-- image_root
+        ├── database/       <-- database_folder
+        └── queries/        <-- queries_folder
+```
+
 | Mode | Command Snippet |
 | --- | --- |
-| **Image Only** | `python eval_vpr.py --encode_mode=image --is_encode_text=0` |
-| **Text Only** | `python eval_vpr.py --encode_mode=text --is_encode_image=0` |
-| **Fusion (Concat)** | `python eval_vpr.py --is_dual_encoder=1 --dual_encoder_fusion=cat` |
-| **Fusion (ADS)** | `python eval_vpr.py --fusion_type=dynamic_weighting --is_text_pooling=1 --model_name=PATH_TO_CKPT` |
-| **Cross-Modal** | `python eval_vpr.py --cross_modal=2 --vpr_dim=256 --image_size=384 --text_dim=256 --embeds_dim=256 --vpr_model_name=Salesforce/blip-itm-base-coco --lora_path=checkpoints/blip_lora_all_r64` |
+| **Image Only** | `python eval_vpr.py --encode_mode=image --is_encode_text=0 --database_folder=PATH_TO_DB_IMAGES --queries_folder=PATH_TO_QUERY_IMAGES --image_root=PATH_TO_IMAGE_ROOT --queries_csv=PATH_TO_DESCRIPTION_CSV` |
+| **Text Only** | `python eval_vpr.py --encode_mode=text --is_encode_image=0 --database_folder=PATH_TO_DB_IMAGES --queries_folder=PATH_TO_QUERY_IMAGES --image_root=PATH_TO_IMAGE_ROOT --queries_csv=PATH_TO_DESCRIPTION_CSV` |
+| **Fusion (Concat)** | `python eval_vpr.py --is_dual_encoder=1 --dual_encoder_fusion=cat --database_folder=PATH_TO_DB_IMAGES --queries_folder=PATH_TO_QUERY_IMAGES --image_root=PATH_TO_IMAGE_ROOT --queries_csv=PATH_TO_DESCRIPTION_CSV` |
+| **Fusion (ADS)** | `python eval_vpr.py --fusion_type=dynamic_weighting --is_text_pooling=1 --model_name=PATH_TO_CKPT --database_folder=PATH_TO_DB_IMAGES --queries_folder=PATH_TO_QUERY_IMAGES --image_root=PATH_TO_IMAGE_ROOT --queries_csv=PATH_TO_DESCRIPTION_CSV` |
+| **Cross-Modal** | `python eval_vpr.py --cross_modal=2 --vpr_dim=256 --image_size=384 --text_dim=256 --embeds_dim=256 --vpr_model_name=Salesforce/blip-itm-base-coco --lora_path=checkpoints/blip_lora_all_r64 --database_folder=PATH_TO_DB_IMAGES --queries_folder=PATH_TO_QUERY_IMAGES --image_root=PATH_TO_IMAGES --queries_csv=PATH_TO_DESCRIPTION_CSV` |
 
-include the following parameters for your local datasets location:
---database_folder=PATH_TO_DATABASE_IMAGES (for example: data/amstertime/test/database)
---queries_folder=PATH_TO_QUERIES_IMAGES   (for example: data/amstertime/test/queries)
---image_root=PATH_TO_DATASET (parent folder of database_folder, for example: data/amstertime/test)
---queries_csv=PATH_TO_DESCRIPTION_CSV (for example: datasets/descriptions/amstertime_descriptions.csv)
 ---
 
 ## ❤️ Acknowledgements
