@@ -307,36 +307,3 @@ If you use this pipeline in your research, please cite:
   howpublished={\url{https://github.com/yourusername/vpr-quality-pipeline}}
 }
 ```
-
-## License
-
-[MIT License](LICENSE) - See LICENSE file for details.
-
-## Contributing
-
-Contributions are welcome! Please:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## Acknowledgments
-
-- SAM3 segmentation model
-- HuggingFace Transformers
-- Qwen2-VL vision-language models
-- Microsoft Phi models
-
-## Contact
-
-For questions or issues:
-- Open an [issue](https://github.com/yourusername/vpr-quality-pipeline/issues)
-- Email: your.email@example.com
-
-## Related Work
-
-- [Original VPR research paper]
-- [SAM3 paper]
-- [Qwen2-VL paper]
