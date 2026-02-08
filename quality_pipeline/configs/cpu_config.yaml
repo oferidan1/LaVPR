@@ -1,0 +1,42 @@
+# CPU-only Configuration for VPR Quality Pipeline
+# For systems without GPU or for testing
+
+pipeline:
+  dataset_name: "example_dataset"
+  resume: true
+  watch_mode: false  # Sequential execution is simpler on CPU
+  watch_poll_sec: 60
+  watch_idle_minutes: 20
+
+step1:
+  # Fast model for CPU execution
+  model: "microsoft/Phi-3.5-mini-instruct"
+  batch_size: 1
+  use_4bit: false  # 4-bit quantization requires CUDA
+  force_cpu: true
+  model_preset: "fast"  # Use faster/smaller model preset
+
+step2:
+  # SAM3 on CPU (slower but works)
+  box_threshold: 0.2
+  sam3_checkpoint: null
+  max_objects_per_image: 10  # Limit objects to speed up CPU processing
+  max_stuff_per_image: 5
+
+step3:
+  # Use HTTP backend if available, otherwise local CPU
+  vlm_provider: "auto"  # Will try OpenAI-compatible server first
+  llm_batch_size: 1
+  prompt_style: "strict_yn"  # Faster prompt style
+  prompt_examples_path: null
+  use_default_examples: false  # Skip examples for speed
+
+step4:
+  # Text LLM on CPU
+  backend: "hf"
+  model: "microsoft/Phi-3.5-mini-instruct"
+  device: "cpu"
+  batch_size: 32  # Smaller batches for CPU
+  objects_col: "objects_vllm_said_no"
+  prompt_examples_path: null
+  use_default_examples: false

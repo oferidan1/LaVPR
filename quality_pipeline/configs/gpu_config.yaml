@@ -1,0 +1,42 @@
+# GPU Configuration for VPR Quality Pipeline
+# Optimized for systems with 1 or more GPUs
+
+pipeline:
+  dataset_name: "example_dataset"
+  resume: true
+  watch_mode: true
+  watch_poll_sec: 60
+  watch_idle_minutes: 20
+
+step1:
+  # Use 4-bit quantization to reduce GPU memory
+  model: "microsoft/Phi-3.5-mini-instruct"
+  batch_size: 4  # Increased batch size for GPU
+  use_4bit: true  # Reduces memory from ~7.6GB to ~2GB
+  force_cpu: false
+  model_preset: "quality"
+
+step2:
+  # SAM3 runs efficiently on GPU
+  box_threshold: 0.2
+  sam3_checkpoint: null
+  max_objects_per_image: 0
+  max_stuff_per_image: 0
+
+step3:
+  # VLM on GPU
+  vlm_provider: "local_hf"  # Use local HuggingFace VLM
+  llm_batch_size: 1
+  prompt_style: "describe_then_yesno"  # More thorough validation
+  prompt_examples_path: null
+  use_default_examples: true
+
+step4:
+  # Text LLM on GPU (if multi-GPU, this can run on separate GPU)
+  backend: "hf"
+  model: "microsoft/Phi-3.5-mini-instruct"
+  device: "cuda"  # Use GPU for Step 4 as well
+  batch_size: 128  # Larger batches on GPU
+  objects_col: "objects_vllm_said_no"
+  prompt_examples_path: null
+  use_default_examples: true

@@ -1,0 +1,51 @@
+# Default Configuration for VPR Quality Pipeline
+# This configuration provides balanced settings for most use cases
+
+pipeline:
+  # Name/identifier for this dataset
+  dataset_name: "example_dataset"
+  
+  # Resume from previous run if output files exist
+  resume: true
+  
+  # Watch mode: steps 2-4 will poll for new rows from previous steps
+  watch_mode: true
+  
+  # Watch polling interval (seconds)
+  watch_poll_sec: 60
+  
+  # Watch idle timeout (minutes) - exit if no new rows appear for this long
+  watch_idle_minutes: 20
+
+step1:
+  # Caption to objects extraction
+  model: "microsoft/Phi-3.5-mini-instruct"
+  batch_size: 1
+  use_4bit: false  # Set true to reduce GPU memory by ~75% (requires bitsandbytes)
+  force_cpu: false
+  model_preset: "quality"  # Alternative: "fast"
+
+step2:
+  # SAM3 visual verification
+  box_threshold: 0.2  # Confidence threshold for SAM3 predictions
+  sam3_checkpoint: null  # Path to local checkpoint, or null to auto-download
+  max_objects_per_image: 0  # 0 = no limit
+  max_stuff_per_image: 0  # 0 = no limit
+
+step3:
+  # Vision-language model validation
+  vlm_provider: "auto"  # Options: auto, local_hf, openai_compat, gemini
+  llm_batch_size: 1
+  prompt_style: "strict_yn"  # Options: strict_yn, describe_then_yesno
+  prompt_examples_path: null  # Path to custom few-shot examples
+  use_default_examples: true
+
+step4:
+  # Text-only LLM filtering
+  backend: "hf"  # Options: hf, openai_compat
+  model: "microsoft/Phi-3.5-mini-instruct"
+  device: "cpu"  # Options: cpu, cuda, cuda:0, auto
+  batch_size: 64
+  objects_col: "objects_vllm_said_no"
+  prompt_examples_path: null
+  use_default_examples: true
