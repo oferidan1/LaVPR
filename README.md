@@ -1,6 +1,7 @@
 # LaVPR: Benchmarking Language and Vision for Place Recognition
 
 Official implementation of **LaVPR**, a comprehensive framework for bridging natural language and computer vision in the context of Visual Place Recognition (VPR).
+[Paper link](https://www.arxiv.org/abs/2602.03253)
 
 ---
 
@@ -143,5 +144,17 @@ This repository builds upon several excellent open-source projects:
 * [VPR-methods-evaluation](https://github.com/gmberton/VPR-methods-evaluation) - Standardized VPR evaluation framework.
 
 ---
+
+## 📖 Cite us
+
+If you find our work useful in your research, please consider citing:
+
+```bibtex
+@article{idan2026lavpr,
+  title={LaVPR: Benchmarking Language and Vision for Place Recognition},
+  author={Idan, Ofer and Badur, Dan and Keller, Yosi and Shavit, Yoli},
+  journal={arXiv preprint arXiv:2602.03253},
+  year={2026}
+}
 
 
