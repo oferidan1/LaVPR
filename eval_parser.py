@@ -12,8 +12,8 @@ def parse_arguments():
     parser.add_argument("--database_folder", type=str, default="/mnt/d/data/amstertime/test/database")    
     parser.add_argument("--queries_folder", type=str, default="/mnt/d/data/amstertime/test/queries")        
     parser.add_argument("--image_root", type=str, default="/mnt/d/data/amstertime/test")
-    parser.add_argument("--queries_csv", type=str, default="datasets/descriptions/amstertime_descriptions.csv")
-    #parser.add_argument("--queries_csv", type=str, default="datasets/descriptions/amstertime_descriptions_subset.csv")            
+    #parser.add_argument("--queries_csv", type=str, default="datasets/descriptions/amstertime_descriptions.csv")
+    parser.add_argument("--queries_csv", type=str, default="datasets/descriptions/amstertime_descriptions_subset.csv")            
     
     # parser.add_argument("--database_folder", type=str, default="/mnt/d/data/pitts30k/images/test/database")    
     # parser.add_argument("--queries_folder", type=str, default="/mnt/d/data/pitts30k/images/test/queries")    
