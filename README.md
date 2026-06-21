@@ -65,7 +65,7 @@ python train.py --fusion_type=dynamic_weighting \
                 --train_csv=datasets/descriptions/gsv_cities_descriptions.csv \
                 --image_root=PATH_TO_GSV_CITIES_DATASET_LOCATON \
                 --val_csv=datasets/descriptions/pitts30k_val_800_queries.csv \
-                --val_image_root=PATH_TO_PITTS30K_VAL_DATASET_LOCATON
+                --val_image_root=PATH_TO_PITTS30K_VAL_DATASET_LOCATION
 
 ```
 
@@ -135,6 +135,26 @@ datasets/
 
 ---
 
+## Licensing and Data Usage
+
+This repository contains two types of assets: original text annotations and modified image sequences.
+
+| Component | License | Notes |
+| :--- | :--- | :--- |
+| **Text Annotations** | [CC BY 4.0](LICENSE) | Original creative work by the author. |
+| **Modified MSLS Images** | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | Derivative work based on the MSLS dataset. |
+
+### Third-Party Dataset References
+While this repository provides annotations for the following datasets, it **does not** redistribute the original images for them. Users are responsible for ensuring compliance with the respective source licenses:
+
+| Dataset | Original License | Status |
+| :--- | :--- | :--- |
+| **GSV Cities** | [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) | Referenced |
+| **Amstertime** | [CC0](https://creativecommons.org/publicdomain/zero/1.0/) | Referenced |
+| **Pitts30k** | Restricted (GSV Terms) | Referenced |
+
+---
+
 ## ❤️ Acknowledgements
 
 This repository builds upon several excellent open-source projects:
@@ -142,9 +162,7 @@ This repository builds upon several excellent open-source projects:
 * [MixVPR](https://github.com/amaralibey/MixVPR) - State-of-the-art VPR architecture.
 * [GSV-Cities](https://github.com/amaralibey/gsv-cities) - Large-scale VPR dataset.
 * [VPR-methods-evaluation](https://github.com/gmberton/VPR-methods-evaluation) - Standardized VPR evaluation framework.
-
----
-
+  
 ## 📖 Cite us
 
 If you find our work useful in your research, please consider citing:
