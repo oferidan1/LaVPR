@@ -1,5 +1,7 @@
 # LaVPR: Benchmarking Language and Vision for Place Recognition
 
+> 🏆 Accepted to **ECCV 2026**
+
 Official implementation of **LaVPR**, a comprehensive framework for bridging natural language and computer vision in the context of Visual Place Recognition (VPR).
 [Paper link](https://www.arxiv.org/abs/2602.03253)
 
@@ -44,7 +46,7 @@ To reproduce our results, download the following datasets:
 | **GSV-Cities** | Training (Source) | [Download](https://github.com/amaralibey/gsv-cities) |
 | **MSLS** | Evaluation | [Download](https://github.com/FrederikWarburg/mapillary_sls) |
 | **LaVPR** | Text descriptions | Extract: datasets/descriptions.zip to: datasets/descriptions|
-| **LaVPR MSLS-Blur**| Blur augmentation (Will vbe provided upon paper acceptance) | Copy folder: datasets/msls_subsets/query_blur to: msls/val dataset location|
+| **LaVPR MSLS-Blur**| Blur augmentation (Will be provided upon paper acceptance) | Copy folder: datasets/msls_subsets/query_blur to: msls/val dataset location|
 | **LaVPR MSLS-Weather** | Weather augmentation (Will be provided upon paper acceptance) | Copy folder: datasets/msls_subsets/query_weather to: msls/val dataset location|
 
 ---
@@ -63,7 +65,7 @@ python train.py --fusion_type=dynamic_weighting \
                 --text_dim=1024 \
                 --text_model_name=BAAI/bge-large-en-v1.5 \
                 --train_csv=datasets/descriptions/gsv_cities_descriptions.csv \
-                --image_root=PATH_TO_GSV_CITIES_DATASET_LOCATON \
+                --image_root=PATH_TO_GSV_CITIES_DATASET_LOCATION \
                 --val_csv=datasets/descriptions/pitts30k_val_800_queries.csv \
                 --val_image_root=PATH_TO_PITTS30K_VAL_DATASET_LOCATION
 
@@ -84,9 +86,9 @@ python train.py --cross_modal=2 \
                 --lora_all_linear=1 \
                 --lora_r=64 \
                 --train_csv=datasets/descriptions/gsv_cities_descriptions.csv \
-                --image_root=PATH_TO_GSV_CITIES_DATASET_LOCATON \
+                --image_root=PATH_TO_GSV_CITIES_DATASET_LOCATION \
                 --val_csv=datasets/descriptions/pitts30k_val_800_queries.csv \
-                --val_image_root=PATH_TO_PITTS30K_VAL_DATASET_LOCATON
+                --val_image_root=PATH_TO_PITTS30K_VAL_DATASET_LOCATION
 
 ```
 
